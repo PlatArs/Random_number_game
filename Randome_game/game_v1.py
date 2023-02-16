@@ -1,6 +1,5 @@
 """Подход 1: Случайное угадывание
 """
-
 import numpy as np
 
 def game_core_v1(number: int = 1) -> int:
@@ -14,6 +13,7 @@ def game_core_v1(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
+    np.random.seed(1)
 
     while True:
         count += 1

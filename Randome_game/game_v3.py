@@ -1,5 +1,6 @@
-"""Алгоритм проверки количества попыток угадывания
-    """
+"""Алгоритм проверки алгоритмов угадывания
+"""
+
 import numpy as np
 
 def score_game(random_predict) -> int:
@@ -12,7 +13,7 @@ def score_game(random_predict) -> int:
         int: среднее количество попыток
     """
     count_ls = []
-    #np.random.seed(1)  # фиксируем сид для воспроизводимости
+    np.random.seed(1)  # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(10000))  # загадали список чисел
 
     for number in random_array:

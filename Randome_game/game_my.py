@@ -1,4 +1,5 @@
-"""Подход 3: Мой алгоритм"""
+"""Мой подход: Угадывание с сокращением диапазона
+"""
 
 import numpy as np
 
@@ -12,20 +13,18 @@ def game_core_MY(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    # Ваш код начинается здесь
-    
     
     count = 0
+    np.random.seed(1)
     min_ = 1
     max_ = 101
 
     while True:
-        predict_number = np.random.randint(min_, max_)
+        predict_number = np.random.randint(min_, max_) # предполагаемое число
         count += 1
         if predict_number == number: 
             return count
-        elif predict_number < number:
+        elif predict_number < number: # устанавливаем наименьшее возможное значение
             min_ = predict_number
-        elif predict_number > number:
+        elif predict_number > number: # устанавливаем максимально возможное значение
            max_ = predict_number
-    # Ваш код заканчивается здесь

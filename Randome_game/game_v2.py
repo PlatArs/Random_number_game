@@ -16,12 +16,13 @@ def game_core_v2(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-    predict = np.random.randint(1, 101)
+    np.random.seed(1)
+    predict = np.random.randint(1, 101) # предполагаемое число
     
     while number != predict:
         count += 1
-        if number > predict:
-            predict += 1
+        if number > predict: # аглоритм сокращает диапазон
+            predict += 1 
         elif number < predict:
             predict -= 1
 
